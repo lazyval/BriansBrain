@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TT = System.Tuple<int, int>;
 
 namespace BrianBrain
 {
@@ -44,6 +43,8 @@ namespace BrianBrain
 
         private State T(int x, int y)
         {
+            // takes cell from the board with bound checking 
+            // (returns State.Null if boudaries were breached)
             return
                 Enumerable.Range(0, width).Contains(x) &&
                 Enumerable.Range(0, height).Contains(y) ?
